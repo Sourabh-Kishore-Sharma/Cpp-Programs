@@ -1,3 +1,12 @@
+/*
+5x5
+* * * * * 
+* * * * * 
+* * * * * 
+* * * * * 
+* * * * *
+*/
+
 #include "iostream"
 using namespace std;
 
