@@ -5,11 +5,11 @@ using namespace std;
 
 int binaryToDecimal(int n){
   int ans=0;
-  int x=1;
+  int base=1;
   while(n!=0){
     int digit=n%10;
-    ans+=digit*x;
-    x*=2;
+    ans+=digit*base;
+    base*=2;
     n=n/10;
   }
   return ans;
@@ -17,11 +17,11 @@ int binaryToDecimal(int n){
 
 int OctalToDecimal(int n){
   int ans=0;
-  int x=1;
+  int base=1;
   while(n!=0){
     int digit=n%10;
-    ans+=digit*x;
-    x*=8;
+    ans+=digit*base;
+    base*=8;
     n=n/10;
   }
   return ans;
@@ -29,17 +29,17 @@ int OctalToDecimal(int n){
 
 int HexadecimalToDecimal(string hex_val){
   int ans=0;
-  int x=1;
+  int base=1;
   int len=hex_val.size();
 
   for(int i=len-1;i>=0;i--){
     if (hex_val[i]>='0' && hex_val[i]<='9'){
-      ans += x*(hex_val[i]-48);
+      ans += base*(hex_val[i]-48);
     }
     else if (hex_val[i] >= 'A' && hex_val[i]<='F'){
-      ans += x*(hex_val[i]-55);
+      ans += base*(hex_val[i]-55);
     }
-    x*=16;
+    base*=16;
   }
   return ans;
 }
