@@ -1,5 +1,4 @@
 #include "iostream"
-#include "cstring"
 using namespace std;
 
 
@@ -44,6 +43,23 @@ int HexadecimalToDecimal(string hex_val){
   return ans;
 }
 
+int decimalToBinary(int n){
+  int ans=0;
+  int base=1;
+
+  while(base<=n)
+    base*=2;
+  base=base/2;
+
+  while(base>0){
+    int q = n/base;
+    n -= q*base;
+    base /= 2;
+    ans = ans*10 + q;
+  }
+  return ans;
+}
+
 int main(){
   int n;
   int c;
@@ -53,7 +69,8 @@ int main(){
 
   cout<<"1. Binary To Decimal\n"
         "2. Octal To Decimal\n"
-        "3. Hexadecimal to Decimal\n";
+        "3. Hexadecimal to Decimal\n"
+        "4. Decimal to Binary\n";
   cout<<"Enter your option: ";
   cin>>c;
 
@@ -79,6 +96,12 @@ int main(){
       cout<<"Decimal: "<<ans<<endl;
       break;
 
+    case 4:
+      cout<<"Decimal: ";
+      cin>>n;
+      ans=decimalToBinary(n);
+      cout<<"Binary: "<<ans<<endl;
+      break;
     default:
       cout<<"Please enter a valid option."<<endl;
 
