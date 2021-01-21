@@ -77,6 +77,29 @@ int decimalToOctal(int n){
   return ans;
 }
 
+string decimalToHexadecimal(int n){
+  int base = 1;
+  string ans = "";
+
+  while(base<=n)
+    base *= 16;
+  base /= 16;
+
+  while(base>0){
+    int q = n/base;
+    base -= q*base;
+    base /= 16;
+
+    if(q <= 9)
+      ans = ans + to_string(q);
+    else{
+      char c = 'A' + q - 10;
+      ans.push_back(c);
+    }
+  }
+  return ans;
+}
+
 int main(){
   int n;
   int c;
@@ -88,8 +111,9 @@ int main(){
         "2. Octal To Decimal\n"
         "3. Hexadecimal to Decimal\n"
         "4. Decimal to Binary\n"
-        "5. Decimal to Octal\n";
-        
+        "5. Decimal to Octal\n"
+        "6. Decimal to Hexadecimal\n\n";
+
   cout<<"Enter your option: ";
   cin>>c;
 
@@ -127,6 +151,13 @@ int main(){
       cin>>n;
       ans=decimalToOctal(n);
       cout<<"Octal: "<<ans<<endl;
+      break;
+
+    case 6:
+      cout<<"Decimal: ";
+      cin>>n;
+      hex_val=decimalToHexadecimal(n);
+      cout<<"Hexadecimal: "<<ans<<endl;
       break;
 
     default:
