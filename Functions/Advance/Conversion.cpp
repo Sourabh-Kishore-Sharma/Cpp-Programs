@@ -60,6 +60,23 @@ int decimalToBinary(int n){
   return ans;
 }
 
+int decimalToOctal(int n){
+  int ans=0;
+  int base=1;
+
+  while(base<=n)
+    base*=8;
+  base=base/8;
+
+  while(base>0){
+    int q = n/base;
+    n -= q*base;
+    base /= 8;
+    ans = ans*10 + q;
+  }
+  return ans;
+}
+
 int main(){
   int n;
   int c;
@@ -70,7 +87,9 @@ int main(){
   cout<<"1. Binary To Decimal\n"
         "2. Octal To Decimal\n"
         "3. Hexadecimal to Decimal\n"
-        "4. Decimal to Binary\n";
+        "4. Decimal to Binary\n"
+        "5. Decimal to Octal\n";
+        
   cout<<"Enter your option: ";
   cin>>c;
 
@@ -102,6 +121,14 @@ int main(){
       ans=decimalToBinary(n);
       cout<<"Binary: "<<ans<<endl;
       break;
+
+    case 5:
+      cout<<"Decimal: ";
+      cin>>n;
+      ans=decimalToOctal(n);
+      cout<<"Octal: "<<ans<<endl;
+      break;
+
     default:
       cout<<"Please enter a valid option."<<endl;
 
