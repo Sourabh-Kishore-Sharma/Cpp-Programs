@@ -14,15 +14,13 @@ int main(){
     cin>>arr[i];
   }
 
-  int max=INT_MIN;
-  int min=INT_MAX;
+  int maxNo=INT_MIN;
+  int minNo=INT_MAX;
 
   for(int i=0;i<size;i++){
-    if(arr[i]>max)
-      max=arr[i];
-    if(arr[i]<min)
-      min=arr[i];
+    maxNo=max(maxNo,arr[i]);
+    minNo=min(minNo,arr[i]);
   }
-  cout<<"Min: "<<min<<endl;
-  cout<<"Max: "<<max<<endl;
+  cout<<"Min: "<<minNo<<endl;
+  cout<<"Max: "<<maxNo<<endl;
 }
