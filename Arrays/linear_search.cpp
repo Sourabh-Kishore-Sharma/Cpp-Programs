@@ -28,7 +28,7 @@ int main(){
   int i=linearSearch(arr,n,k);
 
   if(i != -1)
-    cout<<"Element found at "<<i+1<<endl;
+    cout<<"Element found at "<<i<<endl;
   else
     cout<<"Element not found."<<endl;
 }
