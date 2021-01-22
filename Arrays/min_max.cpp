@@ -1,4 +1,5 @@
 #include "iostream"
+#include "climits"
 using namespace std;
 
 int main(){
@@ -13,7 +14,8 @@ int main(){
     cin>>arr[i];
   }
 
-  int max=0,min=0;
+  int max=INT_MIN;
+  int min=INT_MAX;
 
   for(int i=0;i<size;i++){
     if(arr[i]>max)
