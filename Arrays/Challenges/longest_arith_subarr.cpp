@@ -22,20 +22,22 @@ int main(){
     cin>>a[i];
   }
 
-  int max = 0;
+  int ans = 2;
+  int pd = a[1]-a[0];
+  int j = 2;
+  int curr = 2;
 
-  for(int i=0;i<n;i++){
-    int cnt = 0;
-    int d = a[i+1]-a[i];
-    for(int j=i;j<n;j++){
-      if(a[j]+d == a[j+1]){
-        cnt += 1;
-        continue;
-        }
-      }
-      if(max < cnt){
-        max = cnt;
+  while(j<n){
+    if(pd == a[j]-a[j-1]){
+      curr +=1;
     }
+    else{
+      pd = a[j] - a[j-1];
+      curr = 2;
+    }
+    ans = max(ans,curr);
+    j++;
   }
-  cout<<max+1<<endl;
+  cout<<ans<<endl;
+
 }
