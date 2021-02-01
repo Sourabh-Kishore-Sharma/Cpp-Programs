@@ -1,6 +1,6 @@
 /*
 Find the subarray in an array which has
-maximum sum.
+maximum sum with time complexity of O(n^2).
 */
 #include "iostream"
 #include "climits"
