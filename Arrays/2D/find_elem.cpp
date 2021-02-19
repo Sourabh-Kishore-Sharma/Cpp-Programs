@@ -1,6 +1,7 @@
 /*
 Find a given element in the Matrix
 (2D array).
+Time Complexity = N^2
 */
 #include "iostream"
 using namespace std;
