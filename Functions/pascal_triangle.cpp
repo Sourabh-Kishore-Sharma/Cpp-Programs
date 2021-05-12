@@ -17,12 +17,7 @@ int main(){
   cout<<"Enter row number: ";
   cin>>row;
 
-  int space;
-
   for(int i=0;i<=row;i++){
-    for(space=row; space>i; space--){
-      cout<<" ";
-    }
     for(int j=0; j<=i;j++){
       cout<<fact(i)/(fact(i-j)*fact(j))<<" ";
     }
