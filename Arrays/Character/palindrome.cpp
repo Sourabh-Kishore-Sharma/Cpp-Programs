@@ -17,7 +17,7 @@ int main(){
 
   for(int i=0; i<len; i++){
     if(arr[i] != arr[len-1-i]){
-      cout<<arr[i]<<" "<<arr[len-1-i];
+      cout<<arr[i]<<" "<<arr[len-1-i]<<endl;
       check=false;
       break;
     }
