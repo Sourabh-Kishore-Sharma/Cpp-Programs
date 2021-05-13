@@ -12,7 +12,7 @@ int main(){
   char arr[10] = "sourabh";
   int i=0;
 
-  while(arr[i] != 0){
+  while(arr[i] != '\0'){
     cout<<arr[i];
     i++;
   }
