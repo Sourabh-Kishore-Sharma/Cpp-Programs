@@ -1,6 +1,8 @@
 /*
 Program to check whether entered string
 is palindrome or not.
+
+Eg. NITIN, MALAYALAM, RACECAR
 */
 #include "iostream"
 #include "cstring"
