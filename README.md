@@ -4,3 +4,6 @@ Topics Covered :
 2) Patterns
 3) Functions
 4) Arrays, Subarrays, 2D
+5) Pointers
+6) Dynamic Memory Allocation
+7) Strings
