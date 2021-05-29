@@ -24,13 +24,25 @@ int clearBit(int n, int pos){
   return (n&mask);
 }
 
+int updateBit(int n, int pos, int value){
+  //Clear Bit
+  int x = 1<<pos;
+  int mask = ~x;
+  n = n&mask;
+
+  //Set Bit
+  x = value<<pos;
+  return n|x;
+}
+
 
 int main(){
   int n, pos;
 
   cout<<"1. Get Bit\n"
         "2. Set Bit to 1\n"
-        "3. Clear Bit (Set Bit to 0)\n";
+        "3. Clear Bit (Set Bit to 0)\n"
+        "4. Update Bit\n";
 
   int c;
   cout<<"Enter Option : ";
@@ -51,6 +63,15 @@ int main(){
       cin>>n>>pos;
       cout<<clearBit(n, pos)<<endl;
       break;
+
+    case 4:
+      int value;
+      cin>>n>>pos>>value;
+      cout<<updateBit(n, pos, value)<<endl;
+      break;
+
+    default:
+      cout<<"Invalid Choice."<<endl;
   }
 
   return 0;
