@@ -9,22 +9,24 @@ using namespace std;
 
 int getBit(int n, int pos){
   int x = 1<<pos;
+  return ((n&x) != 0 );
 
-  if( (n & x) != 0 )
-    return 1;
-  else
-    return 0;
 }
 
 int setBit(int n, int pos){
   int x = 1<<pos;
-  return n | x;
+  return (n|x);
+}
+
+int clearBit(int n, int pos){
+  int x = 1<<pos;
+  int mask = ~x;
+  return (n&mask);
 }
 
 
 int main(){
   int n, pos;
-
 
   cout<<"1. Get Bit\n"
         "2. Set Bit to 1\n"
@@ -43,6 +45,11 @@ int main(){
     case 2:
       cin>>n>>pos;
       cout<<setBit(n, pos)<<endl;
+      break;
+
+    case 3:
+      cin>>n>>pos;
+      cout<<clearBit(n, pos)<<endl;
       break;
   }
 
