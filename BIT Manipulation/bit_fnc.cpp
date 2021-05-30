@@ -2,6 +2,8 @@
 Program to perform various functions on bit
 1) getBit() - Get bit of a number at specified position.
 2) setBit() - Set bit 1 at specified position.
+3) clearBit() - Set bit to 0
+4) updateBit() - Sets bit to 0/1
 */
 #include "iostream"
 
