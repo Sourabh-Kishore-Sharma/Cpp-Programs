@@ -13,7 +13,7 @@ void primeFactors(int n){
 
   for(int i=2; i<=n; i++){
     if(spf[i]==i){
-      for(int j=i*i; j<=n; j++){
+      for(int j=i*i; j<=n; j+=i){
         if(spf[j]==j){
           spf[j]=i;
         }
@@ -25,8 +25,12 @@ void primeFactors(int n){
     cout<<spf[n]<<" ";
     n = n/spf[n];
   }
+  cout<<endl;
 }
 
 int main(){
+  int n;
+  cin>>n;
 
+  primeFactors(n);
 }
