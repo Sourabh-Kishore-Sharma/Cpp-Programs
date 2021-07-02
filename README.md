@@ -9,3 +9,5 @@ Topics Covered :
 7) Strings
 8) BIT Manipulation
 9) Recursion >> Backtracking
+10) Vectors and Pairs
+11) Advance Sorting (merge, quick, count, dnf, wave)
