@@ -45,6 +45,19 @@ void insertAtTail(node* &head,int val){
     temp->next = n;
 }
 
+bool linearSearch(node* head, int key){
+    if(head == NULL)
+        return false;
+    
+    node* temp = head;
+    while(temp != NULL){
+        if(temp->data == key)
+            return true;
+        temp = temp->next;
+    }
+    return false;
+}
+
 void display(node* head){
     //Head itself can be used to traverse istead of temp
     //Since its call-by-value, it will not modify the head position in original linked list
@@ -64,9 +77,11 @@ int main(){
         cout<<"Select an option\n"
         "1. Insert at Tail\n"
         "2. Insert at Head\n"
-        "3. Display\n";
+        "3. Search\n"
+        "4. Display\n";
 
         int ch;
+        cout<<"Enter your Choice : ";
         cin>>ch;
 
         switch(ch){
@@ -79,6 +94,12 @@ int main(){
                 insertAtHead(head, val);
                 break;
             case 3:
+                int key;
+                cout<<"Element to search : ";
+                cin>>key;
+                cout<<linearSearch(head, key)<<endl;
+                break;
+            case 4:
                 display(head);
                 break;
             default:
