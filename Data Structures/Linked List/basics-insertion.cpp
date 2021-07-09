@@ -17,6 +17,17 @@ class node{
         }
 };
 
+void insertAtHead(node* &head, int val){
+    node* n = new node(val);
+
+    if(head==NULL){
+        head = n;
+        return;
+    }
+    n->next = head;
+    head = n;
+}
+
 void insertAtTail(node* &head,int val){
     //Take head as call-by-reference since we need to 
     //modify the original linked link
@@ -47,6 +58,7 @@ void display(node* head){
 
 int main(){
     node* head = NULL;
+    int val;
 
     while(true){
         cout<<"Select an option\n"
@@ -59,13 +71,18 @@ int main(){
 
         switch(ch){
             case 1: 
-                int val;
                 cin>>val;
                 insertAtTail(head, val);
+                break;
+            case 2:
+                cin>>val;
+                insertAtHead(head, val);
                 break;
             case 3:
                 display(head);
                 break;
+            default:
+                cout<<"Invalid Option.\n";
         }
     }
     return 0;
