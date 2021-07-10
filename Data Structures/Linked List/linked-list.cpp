@@ -45,6 +45,17 @@ void insertAtTail(node* &head,int val){
     temp->next = n;
 }
 
+void deleteAtHead(node* &head){
+    if(head == NULL){
+        cout<<"Linked List is empty!!!"<<endl;
+        return;
+    }
+    node* to_delete = head;
+    node* temp = head->next;
+    head = temp;
+    delete to_delete;
+}
+
 bool linearSearch(node* head, int key){
     if(head == NULL)
         return false;
@@ -56,6 +67,35 @@ bool linearSearch(node* head, int key){
         temp = temp->next;
     }
     return false;
+}
+
+void deleteByValue(node* &head, int key){
+    if(head == NULL){
+        cout<<"Linked List is empty!!!"<<endl;
+        return;
+    }
+    if(linearSearch(head, key)){
+        if(head->next == NULL){
+            if(head->data == key)
+                deleteAtHead(head);
+            return;
+        }
+
+        node* temp = head;
+        while(temp->next->data != key){
+            temp = temp->next;
+        }
+
+        //We have to delete temp->next 
+        node* to_delete = temp->next;
+        temp->next = temp->next->next;
+        delete to_delete;
+    }
+    else{
+        cout<<"Not Found."<<endl;
+        return;
+    }
+        
 }
 
 void display(node* head){
@@ -71,14 +111,16 @@ void display(node* head){
 
 int main(){
     node* head = NULL;
-    int val;
+    int val, key;
 
     while(true){
-        cout<<"Select an option\n"
+        cout<<"\nSelect an option\n"
         "1. Insert at Tail\n"
         "2. Insert at Head\n"
-        "3. Search\n"
-        "4. Display\n";
+        "3. Delete at Head\n"
+        "4. Delete by value\n"
+        "5. Search\n"
+        "6. Display\n\n";
 
         int ch;
         cout<<"Enter your Choice : ";
@@ -94,12 +136,18 @@ int main(){
                 insertAtHead(head, val);
                 break;
             case 3:
-                int key;
+                deleteAtHead(head);
+                break;
+            case 4:
+                cin>>key;
+                deleteByValue(head, key);
+                break;
+            case 5:
                 cout<<"Element to search : ";
                 cin>>key;
                 cout<<linearSearch(head, key)<<endl;
                 break;
-            case 4:
+            case 6:
                 display(head);
                 break;
             default:
