@@ -5,7 +5,7 @@ using namespace std;
 
 class node{
     public:
-        //Valur of the node
+        //Value of the node
         int data;
         //Pointer of the node to point to the next node
         node* next;
@@ -38,6 +38,7 @@ void insertAtTail(node* &head,int val){
         return;
     }
 
+    //Tranverse till end
     node* temp = head;
     while(temp->next!=NULL){
         temp = temp->next;
@@ -81,6 +82,7 @@ void deleteByValue(node* &head, int key){
             return;
         }
 
+        //Tranverse till temp->next->data is not key
         node* temp = head;
         while(temp->next->data != key){
             temp = temp->next;
