@@ -23,13 +23,11 @@ class node{
 void insertAtHead(node* &head, int val){
     node* n = new node(val);
 
-    if(head==NULL){
-        head = n;
-        return;
-    }
-
     n->next = head;
-    head->prev = n;
+
+    if(head!=NULL)
+        head->prev = n;
+
     head = n;
 }
 
@@ -47,7 +45,40 @@ void insertAtTail(node* &head, int val){
     }
     temp->next = n;
     n->prev = temp;
-    return;
+}
+
+void deleteAtHead(node* &head){
+    if(head==NULL){
+        return;
+    }
+
+    node* to_delete = head;
+    head = head->next;
+    head->prev = NULL;
+
+    delete to_delete;
+}
+
+void deleteByPosition(node* &head, int pos){
+    if(pos == 1){
+        deleteAtHead(head);
+        return;
+    }
+
+    node* temp = head;
+    int count = 1;
+
+    while(temp!=NULL && count!=pos){
+        temp = temp->next;
+        count++;
+    }
+
+    temp->prev->next = temp->next;
+
+    if(temp->next!=NULL)
+        temp->next->prev = temp->prev;
+
+    delete temp;
 }
 
 void display(node* head){
@@ -74,7 +105,9 @@ int main(){
         cout<<"Select your Option \n"
         "1. Insert At Head\n"
         "2. Insert At Tail\n"
-        "3. Display\n"
+        "3. Delete At Head\n"
+        "4. Delete by position\n"
+        "5. Display\n"
         "Enter your choice : ";
         cin>>ch;
 
@@ -90,6 +123,14 @@ int main(){
                 insertAtTail(head, val);
                 break;
             case 3:
+                deleteAtHead(head);
+                break;
+            case 4:
+                int pos;
+                cin>>pos;
+                deleteByPosition(head, pos);
+                break;
+            case 5:
                 display(head);
                 break;
             default:
@@ -97,4 +138,6 @@ int main(){
         }
 
     }
+
+    return 0;
 }
