@@ -51,6 +51,11 @@ void deleteAtHead(node* &head){
     if(head==NULL){
         return;
     }
+    if(head->next == NULL){
+        head = NULL;
+        delete head;
+        return;
+    }
 
     node* to_delete = head;
     head = head->next;
