@@ -12,3 +12,6 @@ Topics Covered :
 10) Vectors and Pairs
 11) Advance Sorting (merge, quick, count, dnf, wave)
 12) OOPs concepts (Encapsulation, Inheritance, Polymorphism - Compile & Run-time)
+13) Data Structures
+    1) Linked List (Singly ll, linear search, reverse, reverse k nodes, cycle detection & removal, doubly ll, append last k nodes, intersection point of 2 ll, put                        even nodes after odd nodes)
+    2) Stack (all operations, reverse sentence, reverse stack, infix, prefix postfix expressions)
