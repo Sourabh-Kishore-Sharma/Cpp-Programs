@@ -93,5 +93,4 @@ int main(){
 
     rightView(root);
     leftView(root);
-    topView(root);
 }
