@@ -67,37 +67,6 @@ void leftView(node* root){
     cout<<endl;
 }
 
-void topView(node* root){
-    if(root == NULL)
-        return;
-    
-    deque<int> ans;
-
-    queue<node*> q;
-    q.push(root);
-
-    while(!q.empty()){
-        int n = q.size();
-        for(int i=0; i<n; i++){
-            node* curr = q.front();
-            q.pop();
-
-            if(i==0)
-                ans.push_front(curr->data);
-            else if (i==n-1)
-                ans.push_back(curr->data);
-            
-            if(curr->left != NULL)
-                q.push(curr->left);
-            if(curr->right != NULL)
-                q.push(curr->right);
-        }
-    }
-    for(auto i:ans)
-        cout<<i<<" ";
-    cout<<endl;
-}
-
 int main(){
     /*
     
