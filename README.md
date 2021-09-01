@@ -20,3 +20,4 @@ Topics Covered :
     1) Containers (array, vector, deque, list, stack, queue, priority queue, set, map)
     2) Algorithms (binary search, lower/upper bound, min/max, sort, swap)
 15) Questions on Data Structures
+16) Binary Tree
