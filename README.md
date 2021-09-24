@@ -21,3 +21,4 @@ Topics Covered :
     2) Algorithms (binary search, lower/upper bound, min/max, sort, swap)
 15) Questions on Data Structures
 16) Binary Tree
+17) Binary Search Tree
