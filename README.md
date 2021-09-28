@@ -22,3 +22,4 @@ Topics Covered :
 15) Questions on Data Structures
 16) Binary Tree
 17) Binary Search Tree
+18) Challenges on Binary Search
